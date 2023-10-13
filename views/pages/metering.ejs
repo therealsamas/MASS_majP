@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Appliances</title>
+    <link rel="stylesheet" href="/meteringStyle.css">
+</head>
+<body>
+    <header>
+        <h1>Connected Appliances</h1>
+    </header>
+    <main>
+        <table id="applianceTable">
+            <thead>
+                <tr>
+                    <th>Appliance Name</th>
+                    <th>Status</th>
+                    <th>Power Consumption (W)</th>
+                    <th>Voltage (V)</th>
+                    <th>Current (A)</th>
+                    <th>Energy Usage (kWh)</th>
+                    <th>Connection Type</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows for connected appliances will be added here dynamically -->
+            </tbody>
+        </table>
+        <div id="addApplianceForm">
+            <h2>Add an Appliance</h2>
+            <form id="applianceForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="status">Status:</label>
+                <select id="status" required>
+                    <option value="On">On</option>
+                    <option value="Off">Off</option>
+                </select>
+                <label for="consumption">Power Consumption (W):</label>
+                <input type="number" id="consumption" required>
+                <label for="voltage">Voltage (V):</label>
+                <input type="number" id="voltage" required>
+                <label for="current">Current (A):</label>
+                <input type="number" id="current" required>
+                <label for="energy">Energy Usage (kWh):</label>
+                <input type="number" id="energy" required>
+                <label for="connectionType">Connection Type:</label>
+                <input type="text" id="connectionType" required>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </main>
+    <script src="/meteringScript.js"></script>
+</body>
+</html>

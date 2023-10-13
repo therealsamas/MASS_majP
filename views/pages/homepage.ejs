@@ -1,0 +1,60 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A smart solution for home automation</title>
+  <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">MASS</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <!-- <li><a href="/">LOGIN</a></li> -->
+                    <li class="username"></li>
+                    <li class="logout">LOGOUT</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="r-flx ">
+    <div class="login-container main-f">
+        <h2>Login</h2>
+        <form class="loginform" action="/" method="POST">
+            <input name="userid" type="text" placeholder="User_id" required>
+            <input name="password" type="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <h2>signup</h2>
+        <form class="signupform" action="/" method="POST">
+            <input name="userid" type="text" placeholder="userid" required>
+            <input name="name" type="text" placeholder="Username" required>
+            <input name="password" type="password" placeholder="Password" required>
+            <input class=" confpass" type="password" name="confirmpassword" placeholder="Confirm Password">
+            <button type="submit">Sign up</button>
+        </form>
+    </div>
+  <div class="container">
+    <div class="record-form">
+      <h2>Add Legal Record</h2>
+      <label for="recordName">Record Name:</label>
+      <input type="text" class = "recname" placeholder="Enter record name">
+      <input type="text" class = "recdata" placeholder="Enter record data">
+      <button class="recsave">Add Record</button>
+    </div>
+    <div>
+      <h2>Legal Records</h2>
+      <ul class="record-list" id="recordItems">
+        <!-- List of legal records will be displayed here -->
+      </ul>
+    </div>
+  </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="/homepage.js"></script>
+</body>
+</html>

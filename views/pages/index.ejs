@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartHome Solutions</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to SmartHome Solutions</h1>
+        <p>Your source for cutting-edge home automation. Transform your home into a smart, efficient, and secure haven.</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Products</a>
+                <div class="dropdown-content">
+                    <a href="metering.html">Smart Lighting</a>
+                    <a href="#security">Security Systems</a>
+                    <a href="#climate">Climate Control</a>
+                </div>
+            </li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <div class="authentication">
+                <%if(locals.user){ %>
+                    <li class="user"><%= locals.user.name %></li>
+                    <li class="logout">Sign Out</li >   
+                <%}else{%>
+                    <li class="user"></li>
+                    <li class=" logout signout ">Sign Out</li>
+                    <li><a href="#"  id="loginBtn" class="login">Login</a></li>
+                    <li><a href="#"  id="signupBtn" class="signup">Sign Up</a></li>
+                <%}%>
+            </div>
+        </ul>
+    </nav>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Welcome to SmartHome Solutions</h2>
+                <p>Your source for cutting-edge home automation. Transform your home into a smart, efficient, and secure haven.</p>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>At SmartHome Solutions, we are dedicated to revolutionizing the way you experience your home. Our team of experts is passionate about bringing you the latest innovations in home automation and security. With years of experience in the industry, we have transformed countless houses into modern, intelligent homes.</p>
+        </section>
+        <section id="products">
+            <h2>Our Products</h2>
+            <div class="product-card">
+                <img src="./lighting.jpeg" alt="Smart Lighting">
+                <h3>Smart Lighting</h3>
+                <p>Elevate your lighting experience with our smart lighting solutions. Control your lights with ease through your smartphone or voice commands. Set the perfect ambiance for any occasion.</p>
+            </div>
+            <div class="product-card">
+                <img src="./security.jpeg" alt="Security Systems">
+                <h3>Security Systems</h3>
+                    <p>Protect your home and loved ones with our state-of-the-art security systems. Monitor your property remotely, receive real-time alerts, and enjoy peace of mind knowing that your home is secure.</p>
+                </div>
+                <div class="product-card">
+                    <img src="./climate.jpeg" alt="Climate Control">
+                    <h3>Climate Control</h3>
+                    <p>Optimize your home's climate for comfort and efficiency. Our climate control solutions allow you to adjust temperature and humidity settings from anywhere, ensuring your home is always cozy.</p>
+                </div>
+            </section>
+            <section id="services">
+                <h2>Our Services</h2>
+                <ul>
+                    <li>Installation and Setup: Our experts will install and set up your home automation system to ensure it works seamlessly.</li>
+                    <li>Customized Home Automation Solutions: We tailor solutions to your specific needs, making your home uniquely smart.</li>
+                    <li>24/7 Customer Support: Our dedicated support team is available round the clock to assist you.</li>
+                </ul>
+            </section>
+            <section id="portfolio">
+                <h2>Portfolio</h2>
+                <div class="portfolio-item">
+                    <img src="./portfolio1.jpeg" alt="Smart Home 1">
+                    <h3>Smart Home 1</h3>
+                    <p>Explore our showcase of a beautifully transformed home. See how SmartHome Solutions made this house a smart, energy-efficient, and secure place to live.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="./portfolio2.jpeg" alt="Smart Home 2">
+                    <h3>Smart Home 2</h3>
+                    <p>Discover another remarkable transformation by SmartHome Solutions. Witness the magic of modern home automation in action.</p>
+                </div>
+            </section>
+            
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <form action="#" method="POST" onsubmit="return validateForm();">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+            
+    </main>
+        
+    <div class="blur-background" id="blurBg"></div>
+    <div class="popup-form" id="loginForm">
+            <h2 class="tcenter">Login</h2>
+            <form class="loginform" action="/" method="POST">
+                <label for="email">Email:</label>
+                <input class="email common-input" type="email" name="email" placeholder="e-mail here" required>
+                
+                <label for="password">Password:</label>
+                <input name="password" type="password" id="password" placeholder="Password" required>
+
+                <button type="submit" id="loginSubmit">Login</button>
+        </form>
+    </div>
+
+    <div class="popup-form" id="signupForm">
+        <h2 class="tcenter">Sign Up</h2>
+        <form class="signupForm" action="/" method="POST">
+            <label for="newUsername">Username:</label>
+            <input name="name common-input" type="text" placeholder="Username" required>
+   
+            <label for="email">Email:</label>
+            <input class="email common-input" type="email" name="email" placeholder="e-mail here" required>
+    
+            <label for="newPassword">Password:</label>
+            <input class="common-input" name="password" type="password" placeholder="Password" required>
+
+             <label for="newPassword">confirm Password:</label>
+            <input class="common-input confpass" type="password" name="confirmpassword" placeholder="Confirm Password">
+            <!-- <button type="submit">Sign up</button> -->
+    
+            <button type="submit" id="signupSubmit">Sign Up</button>
+        </form>
+    </div>
+    
+
+    <footer>
+        <p>&copy; 2023 SmartHome Solutions</p>
+    </footer>
+    <div class="responsive-menu">
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Products</a>
+                <div class="dropdown-content">
+                    <a href="metering.html">Smart Lighting</a>
+                    <a href="#security">Security Systems</a>
+                    <a href="#climate">Climate Control</a>
+                </div>
+            </li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="/login.js"></script>
+    <script src="/example.js"></script>
+</body>
+</html>
