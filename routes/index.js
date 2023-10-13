@@ -12,7 +12,7 @@ router.post('/sessioncreate',passport.authenticate(
 	'local',
 	{failureRedirect: '/'},
 	),
-	home_controller.sessioncreate
+	home_controller.createnewsession
 );
 
 router.post('/dessess', home_controller.destroysession);

@@ -104,13 +104,26 @@ section p {
 .loginform{
     height: 30vh;
 }
+.user1{
+    display: inline-block;
+}
 .user{
     display: none;
+}
+.logout{
+    display: inline-block;
 }
 .signout{
     display: none;
 }
-
+.login{
+    display: inline-block;
+    color: whitesmoke;
+}
+.signup{
+    display: inline-block;
+    color: whitesmoke;
+}
 
 .product-card {
     background-color: #fff;

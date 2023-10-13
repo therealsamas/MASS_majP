@@ -28,13 +28,13 @@
             <li><a href="#contact">Contact</a></li>
             <div class="authentication">
                 <%if(locals.user){ %>
-                    <li class="user"><%= locals.user.name %></li>
-                    <li class="logout">Sign Out</li >   
+                    <div class="user1"><%= locals.user.name %></div>
+                    <div class="logout">Sign Out</div >   
                 <%}else{%>
-                    <li class="user"></li>
-                    <li class=" logout signout ">Sign Out</li>
-                    <li><a href="#"  id="loginBtn" class="login">Login</a></li>
-                    <li><a href="#"  id="signupBtn" class="signup">Sign Up</a></li>
+                    <div class="user"></div>
+                    <div class="signout logout ">Sign Out</div>
+                    <div class="login">Login</div>
+                    <div class="signup">Sign Up</div>
                 <%}%>
             </div>
         </ul>
@@ -127,7 +127,7 @@
         <h2 class="tcenter">Sign Up</h2>
         <form class="signupForm" action="/" method="POST">
             <label for="newUsername">Username:</label>
-            <input name="name common-input" type="text" placeholder="Username" required>
+            <input class="name common-input" name="name" type="text" placeholder="Username" required>
    
             <label for="email">Email:</label>
             <input class="email common-input" type="email" name="email" placeholder="e-mail here" required>
@@ -167,6 +167,6 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="/login.js"></script>
-    <script src="/example.js"></script>
+    <!-- <script src="/example.js"></script> -->
 </body>
 </html>
