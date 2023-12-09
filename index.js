@@ -3,6 +3,8 @@ const port = 8080;
 
 const app = express();
 
+const cors = require('cors');
+
 const cookieParser = require('cookie-parser');
 const expSession = require('express-session');
 
